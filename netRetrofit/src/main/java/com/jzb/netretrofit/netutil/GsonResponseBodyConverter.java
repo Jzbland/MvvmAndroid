@@ -30,7 +30,7 @@ public class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> 
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
         value.close();
-        Log.e("zxjt", "convert: "+response);
+//        Log.e("zxjt", "convert: "+response);
         T responseBody = getResponseBody(response);
         return responseBody;
 

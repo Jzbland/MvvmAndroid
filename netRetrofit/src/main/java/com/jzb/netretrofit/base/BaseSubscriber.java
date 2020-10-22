@@ -52,9 +52,10 @@ public abstract class BaseSubscriber<T> extends DisposableObserver<T> {
     public void onError(@NonNull Throwable e) {
         Log.e("http->error","-->http is onError");
         if (e instanceof ApiException) {
-            Log.e("http->error","-->e instanceof ApiException err");
+            Log.e("http->error","-->e instanceof ApiException err:"+e);
+            ApiException.handleException(e);
         } else {
-            Log.e("http->error","-->e !instanceof ApiException err");
+            Log.e("http->error","-->e !instanceof ApiException err:"+e);
         }
     }
 
