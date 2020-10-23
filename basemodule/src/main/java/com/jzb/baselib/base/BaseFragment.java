@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,8 +21,8 @@ import java.lang.reflect.ParameterizedType;
  * BaseFragment
  **/
 public abstract class BaseFragment<VM extends ViewModel,VDB extends ViewDataBinding> extends Fragment {
-    private VM mViewModel;
-    private VDB mViewDataBinding;
+    protected VM mViewModel;
+    protected VDB mViewDataBinding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle state) {
@@ -42,5 +43,6 @@ public abstract class BaseFragment<VM extends ViewModel,VDB extends ViewDataBind
     protected abstract void initData();
 
     protected abstract int getLayoutId();
+
 
 }
